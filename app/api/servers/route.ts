@@ -14,22 +14,26 @@ export async function POST(req: Request) {
       return new NextResponse("Unauthorized", { status: 401 });
     }
 
-    const workSpace = await db.workSpace.create({
+    const server = await db.server.create({
       data: {
         profileId: profile.id,
         name,
         imageUrl,
         inviteCode: uuidv4(),
         channels: {
-          create: [{ name: "Work", profileId: profile.id }],
+          create: [
+            { name: "general", profileId: profile.id }
+          ]
         },
         members: {
-          create: [{ profileId: profile.id, role: MemberRole.ADMIN }],
-        },
-      },
+          create: [
+            { profileId: profile.id, role: MemberRole.ADMIN }
+          ]
+        }
+      }
     });
 
-    return NextResponse.json(workSpace);
+    return NextResponse.json(server);
   } catch (error) {
     console.log("[SERVERS_POST]", error);
     return new NextResponse("Internal Error", { status: 500 });

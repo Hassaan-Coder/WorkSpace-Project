@@ -15,7 +15,7 @@ model Profile {
   imageUrl String @db.Text
   email String @db.Text
 
-  workspaces WorkSpace[]
+  servers Server[]
   members Member[]
   channels Channel[]
 
@@ -23,7 +23,7 @@ model Profile {
   updatedAt DateTime @updatedAt
 }
 
-model WorkSpace {
+model Server {
   id String @id @default(uuid())
   name String
   imageUrl String @db.Text
@@ -42,7 +42,7 @@ model WorkSpace {
 }
 
 enum MemberRole {
-   ADMIN
+  ADMIN
   MODERATOR
   GUEST
 }
@@ -54,8 +54,8 @@ model Member {
   profileId String
   profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
 
-  workspaceId String
-  workspace WorkSpace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  serverId String
+  server Server @relation(fields: [serverId], references: [id], onDelete: Cascade)
 
   messages Message[]
   directMessages DirectMessage[]
@@ -67,7 +67,7 @@ model Member {
   updatedAt DateTime @updatedAt
 
   @@index([profileId])
-  @@index([workspaceId])
+  @@index([serverId])
 }
 
 enum ChannelType {
@@ -84,8 +84,8 @@ model Channel {
   profileId String
   profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
 
-  workspaceId String
-  workspace WorkSpace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  serverId String
+  server Server @relation(fields: [serverId], references: [id], onDelete: Cascade)
 
   messages Message[]
 
@@ -93,7 +93,7 @@ model Channel {
   updatedAt DateTime @updatedAt
 
   @@index([profileId])
-  @@index([workspaceId])
+  @@index([serverId])
 }
 
 model Message {

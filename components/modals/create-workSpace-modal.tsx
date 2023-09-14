@@ -40,7 +40,7 @@ export const CreateWorkSpaceModal = () => {
   const { isOpen, onClose, type } = useModal();
   const router = useRouter();
 
-  const isModalOpen = isOpen && type === "createServer";
+  const isModalOpen = isOpen && type === "createWorkSpace";
 
   const form = useForm({
     resolver: zodResolver(formSchema),

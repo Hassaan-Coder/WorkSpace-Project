@@ -20,7 +20,7 @@ import {
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
+  FormMessage
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -29,11 +29,11 @@ import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
   name: z.string().min(1, {
-    message: "WorkSpace name is required.",
+    message: "Server name is required."
   }),
   imageUrl: z.string().min(1, {
-    message: "WorkSpace image is required.",
-  }),
+    message: "Server image is required."
+  })
 });
 
 export const InitialModal = () => {
@@ -50,14 +50,14 @@ export const InitialModal = () => {
     defaultValues: {
       name: "",
       imageUrl: "",
-    },
+    }
   });
 
   const isLoading = form.formState.isSubmitting;
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      await axios.post("/api/workSpace", values);
+      await axios.post("/api/servers", values);
 
       form.reset();
       router.refresh();
@@ -65,7 +65,7 @@ export const InitialModal = () => {
     } catch (error) {
       console.log(error);
     }
-  };
+  }
 
   if (!isMounted) {
     return null;
@@ -76,11 +76,10 @@ export const InitialModal = () => {
       <DialogContent className="bg-white text-black p-0 overflow-hidden">
         <DialogHeader className="pt-8 px-6">
           <DialogTitle className="text-2xl text-center font-bold">
-            Customize your WorkSpace
+            Customize your server
           </DialogTitle>
           <DialogDescription className="text-center text-zinc-500">
-            Give your WorkSpace a personality with a name and an image. You can
-            always change it later.
+            Give your server a personality with a name and an image. You can always change it later.
           </DialogDescription>
         </DialogHeader>
         <Form {...form}>
@@ -94,7 +93,7 @@ export const InitialModal = () => {
                     <FormItem>
                       <FormControl>
                         <FileUpload
-                          endpoint="WorkSpaceImage"
+                          endpoint="serverImage"
                           value={field.value}
                           onChange={field.onChange}
                         />
@@ -109,8 +108,10 @@ export const InitialModal = () => {
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="uppercase text-xs font-bold text-zinc-500 dark:text-secondary/70">
-                      WorkSpace name
+                    <FormLabel
+                      className="uppercase text-xs font-bold text-zinc-500 dark:text-secondary/70"
+                    >
+                      Server name
                     </FormLabel>
                     <FormControl>
                       <Input
@@ -134,5 +135,5 @@ export const InitialModal = () => {
         </Form>
       </DialogContent>
     </Dialog>
-  );
-};
+  )
+}
