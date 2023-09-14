@@ -5,7 +5,6 @@ import { useParams, useRouter } from "next/navigation";
 
 import { cn } from "@/lib/utils";
 import { ActionTooltip } from "@/components/action-tooltip";
-import WorkSpaceIdPage from "../../app/(main)/(routes)/WorkSpace/WorkSpaceId/page";
 
 interface NavigationItemProps {
   id: string;

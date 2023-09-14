@@ -18,7 +18,7 @@ const SetupPage = async () => {
   });
 
   if (workSpace) {
-    return redirect(`/workSpaces/${workSpace.id}`);
+    return redirect(`/workSpace/${workSpace.id}`);
   }
 
   return <InitialModal />;
