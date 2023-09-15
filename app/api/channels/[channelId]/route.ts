@@ -34,20 +34,20 @@ export async function DELETE(
             profileId: profile.id,
             role: {
               in: [MemberRole.ADMIN, MemberRole.MODERATOR],
-            }
-          }
-        }
+            },
+          },
+        },
       },
       data: {
         channels: {
           delete: {
             id: params.channelId,
             name: {
-              not: "general",
-            }
-          }
-        }
-      }
+              not: "Work",
+            },
+          },
+        },
+      },
     });
 
     return NextResponse.json(server);
@@ -80,8 +80,8 @@ export async function PATCH(
       return new NextResponse("Channel ID missing", { status: 400 });
     }
 
-    if (name === "general") {
-      return new NextResponse("Name cannot be 'general'", { status: 400 });
+    if (name === "Work") {
+      return new NextResponse("Name cannot be 'Work'", { status: 400 });
     }
 
     const server = await db.server.update({
@@ -92,9 +92,9 @@ export async function PATCH(
             profileId: profile.id,
             role: {
               in: [MemberRole.ADMIN, MemberRole.MODERATOR],
-            }
-          }
-        }
+            },
+          },
+        },
       },
       data: {
         channels: {
@@ -102,16 +102,16 @@ export async function PATCH(
             where: {
               id: params.channelId,
               NOT: {
-                name: "general",
+                name: "Work",
               },
             },
             data: {
               name,
               type,
-            }
-          }
-        }
-      }
+            },
+          },
+        },
+      },
     });
 
     return NextResponse.json(server);
