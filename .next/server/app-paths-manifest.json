@@ -1,5 +1,21 @@
 {
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/(setup)/page": "app/(setup)/page.js",
-  "/(main)/(routes)/servers/[serverId]/page": "app/(main)/(routes)/servers/[serverId]/page.js"
+  "/api/channels/route": "app/api/channels/route.js",
+  "/api/messages/route": "app/api/messages/route.js",
+  "/api/livekit/route": "app/api/livekit/route.js",
+  "/api/servers/route": "app/api/servers/route.js",
+  "/api/direct-messages/route": "app/api/direct-messages/route.js",
+  "/api/uploadthing/route": "app/api/uploadthing/route.js",
+  "/api/channels/[channelId]/route": "app/api/channels/[channelId]/route.js",
+  "/api/members/[memberId]/route": "app/api/members/[memberId]/route.js",
+  "/api/servers/[serverId]/route": "app/api/servers/[serverId]/route.js",
+  "/(invite)/(routes)/invite/[inviteCode]/page": "app/(invite)/(routes)/invite/[inviteCode]/page.js",
+  "/api/servers/[serverId]/invite-code/route": "app/api/servers/[serverId]/invite-code/route.js",
+  "/api/servers/[serverId]/leave/route": "app/api/servers/[serverId]/leave/route.js",
+  "/(auth)/(routes)/sign-in/[[...sign-in]]/page": "app/(auth)/(routes)/sign-in/[[...sign-in]]/page.js",
+  "/(auth)/(routes)/sign-up/[[...sign-up]]/page": "app/(auth)/(routes)/sign-up/[[...sign-up]]/page.js",
+  "/(main)/(routes)/servers/[serverId]/page": "app/(main)/(routes)/servers/[serverId]/page.js",
+  "/(main)/(routes)/servers/[serverId]/channels/[channelId]/page": "app/(main)/(routes)/servers/[serverId]/channels/[channelId]/page.js",
+  "/(main)/(routes)/servers/[serverId]/conversations/[memberId]/page": "app/(main)/(routes)/servers/[serverId]/conversations/[memberId]/page.js"
 }
