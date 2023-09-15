@@ -1,0 +1,21 @@
+{
+  "/favicon.ico/route": "/favicon.ico",
+  "/(setup)/page": "/",
+  "/api/channels/route": "/api/channels",
+  "/api/servers/route": "/api/servers",
+  "/api/livekit/route": "/api/livekit",
+  "/api/direct-messages/route": "/api/direct-messages",
+  "/api/messages/route": "/api/messages",
+  "/api/uploadthing/route": "/api/uploadthing",
+  "/api/members/[memberId]/route": "/api/members/[memberId]",
+  "/api/channels/[channelId]/route": "/api/channels/[channelId]",
+  "/api/servers/[serverId]/route": "/api/servers/[serverId]",
+  "/(invite)/(routes)/invite/[inviteCode]/page": "/invite/[inviteCode]",
+  "/api/servers/[serverId]/invite-code/route": "/api/servers/[serverId]/invite-code",
+  "/api/servers/[serverId]/leave/route": "/api/servers/[serverId]/leave",
+  "/(auth)/(routes)/sign-in/[[...sign-in]]/page": "/sign-in/[[...sign-in]]",
+  "/(auth)/(routes)/sign-up/[[...sign-up]]/page": "/sign-up/[[...sign-up]]",
+  "/(main)/(routes)/servers/[serverId]/page": "/servers/[serverId]",
+  "/(main)/(routes)/servers/[serverId]/conversations/[memberId]/page": "/servers/[serverId]/conversations/[memberId]",
+  "/(main)/(routes)/servers/[serverId]/channels/[channelId]/page": "/servers/[serverId]/channels/[channelId]"
+}
