@@ -1,10 +1,6 @@
 {
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
-  "/api/socket/direct-messages/[directMessageId]": "pages/api/socket/direct-messages/[directMessageId].js",
-  "/api/socket/direct-messages": "pages/api/socket/direct-messages.js",
-  "/api/socket/messages/[messageId]": "pages/api/socket/messages/[messageId].js",
-  "/api/socket/messages": "pages/api/socket/messages.js",
-  "/api/socket/io": "pages/api/socket/io.js",
-  "/_document": "pages/_document.js"
+  "/_document": "pages/_document.js",
+  "/api/socket/io": "pages/api/socket/io.js"
 }
